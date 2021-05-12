@@ -1,0 +1,10 @@
+---
+
+- name: Set up Letencrypt server
+  hosts: all
+  vars_files:
+    - dhcpvars.yml
+    - letsencrypttimervars.yml
+  roles:
+    - { role: letsencrypt-server, become: yes }
+    - { role: systemd-timer, become: yes }

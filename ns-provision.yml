@@ -1,0 +1,10 @@
+---
+
+- name: Set up DNS and DHCP
+  hosts: all
+  vars_files:
+    - dhcpvars.yml
+  roles:
+    - { role: dns-dhcp, domain_name: viskum-net.dk, dnsserver_ipaddress: 192.168.200.5, fwd_domain_name: viskum-net.dk, rev_domain_name: 168.192, dhcp_interface: eth1, become: yes }
+#    - { role: dns-dhcp, setup_type: domain, fwd_domain_name: viskum-net.dk, rev_domain_name: 168.192, dnsserver_ipaddress: 192.168.200.5, become: yes }
+#    - { role: dns-dhcp, setup_type: dhcp, fwd_domain_name: viskum-net.dk, rev_domain_name: 168.192, dnsserver_ipaddress: 192.168.200.5, dhcp_interface: eth1, become: yes }

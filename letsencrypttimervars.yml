@@ -1,0 +1,9 @@
+---
+
+timers:
+  - name: certrenew
+    timer_command: "/usr/local/bin/certbot renew --non-interactive"
+    timer_user: "root"
+    timer_OnCalendar: "*-*-* 13:30:00"
+    timer_AccuracySec: 15s
+    state: "present"
